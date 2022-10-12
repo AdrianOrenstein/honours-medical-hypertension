@@ -4,6 +4,14 @@ Given free-text patient records, perform binary classification as to whether the
 
 Results using a [balanced dataset](https://wandb.ai/adrianorenstein2/hypertension-project/reports/Hypertension-reproduce-results--VmlldzoyNDQ0OTg2?accessToken=0r6szww4emgau9d6i7rirzy3yxmtgdjri2mtns8ycr2l4i4ctwa207ytvlkdpkmh) and [imbalanced dataset](https://wandb.ai/adrianorenstein2/hypertension-project-unbalanced-test/reports/Hypertension-imbalanced-dataset--VmlldzoyNDU4MjYz?accessToken=cb93gkt4hiimy7ry4cl7e96t2snee0p09gx13zx18j10r2zucvcxxtple1pxj0mw) are available as WandB reports.
 
+In more detail:
+1. We take each patient uid
+1. All datasets with a matching patient uid is aggregated
+1. Patient records are stored as JSON
+1. Records contain a key and a value, as keys are often shared we add this to the token dictionary for the deep learning model. Values are tokenised character by character.
+1. A 1D Resnet is used to take the tokenised input and output a multi-class classification as to whether the patient was diagnosed with hypertension or not.
+
+
 ## Running experiments
 Below are sections that outline various aspects of using this codebase.
 
@@ -13,6 +21,8 @@ A [Makefile](https://opensource.com/article/18/8/what-how-makefile) is used for 
 - `make run` spawns a container and opens an interactive terminal.
 - `make jupyter` spawns a container and opens jupyter lab, use the website token to open in your preferred browser.
 - `make lint` runs linting and prettifies code inside the `src/` directory. 
+
+The dockerfile is stored on [here, on dockerhub](https://hub.docker.com/repository/docker/adrianorenstein/hypertension).
 
 
 ### Logging Experiments
