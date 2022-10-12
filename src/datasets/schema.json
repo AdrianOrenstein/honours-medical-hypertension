@@ -1,0 +1,27 @@
+{
+  "schema": [
+    "script_item_active.quantity",
+    "patient.smoke",
+    "observation_active.observation_name",
+    "script_item_active.frequency",
+    "pathology_result2015_2017_active.result_name",
+    "immunisation_active.vaccine_name",
+    "script_item_active.strength",
+    "patient.ieo_q",
+    "script_item_active.repeats",
+    "reason_prescription_active.first_name_presc",
+    "reason_prescription_active.first_ingred_presc",
+    "patient.aborig",
+    "script_item_active.med_name",
+    "patient.irsad_q",
+    "reason_prescription_active.reason",
+    "patient.irsad",
+    "observation_active.observation_value",
+    "script_item_active.med_active_ingr",
+    "pathology_result2015_2017_active.result_value",
+    "patient.gender2",
+    "patient.ieo",
+    "script_item_active.dose",
+    "encounter_reason_active.reason"
+  ]
+}
